@@ -1,0 +1,33 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "temp-mail",
+	"compatibility_date": "2025-11-26",
+	"main": "./workers/app.ts",
+	"observability": {
+		"enabled": true
+	},
+	"triggers": {
+		"crons": ["*/30 * * * *"]
+	},
+	"kv_namespaces": [
+		{
+			"binding": "KV",
+			"id": "179fc26d6a5f42178182e0a5a95d7cf4"
+		}
+	],
+	"d1_databases": [
+		{
+			"binding": "D1",
+			"database_name": "temp-mail",
+			"database_id": "c5ee2cfc-d6c8-4ae9-9575-0f406816c0b7",
+			"preview_database_id": "8a38551f-5eab-4095-b69b-2f4a87e9d8d1",
+			"migrations_dir": "migrations"
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "R2",
+			"bucket_name": "temp-mail","preview_bucket_name": "temp-mail"
+		}
+	]
+}
